@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-cli-javi-file
+  labels:
+    app: web-cli-javi-file
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-cli-javi-file
+  template:
+    metadata:
+      labels:
+        app: web-cli-javi-file
+    spec:
+      containers:
+      - name: httpd
+        image: httpd
+        ports:
+        - containerPort: 80
