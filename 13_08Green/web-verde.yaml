@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: web-verde
+  name: web-verde
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-verde
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-verde
+    spec:
+      volumes:
+      - name: web-config
+        configMap:
+          name: web-verde-cm
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: web-config
+status: {}

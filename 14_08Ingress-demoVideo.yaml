@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1 
+kind: Ingress
+metadata:
+  name: ingress-demo
+  namespace: default
+spec:
+  rules:
+  - host: blue.example.com
+    #host: stable-color.io
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: /
+        backend:
+          service:
+            name: blue-app
+            port:
+              number: 80
+  - host: green.example.com
+  #host: tested-color.io
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: /
+        backend:
+          service:
+            name: green-web
+            port:
+              number: 80

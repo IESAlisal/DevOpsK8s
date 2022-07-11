@@ -7,3 +7,4 @@
     kubectl get secret my-password
     kubectl describe secret my-password
     kubectl get secret my-password -o yaml
+    kubectl get secret my-password -o json

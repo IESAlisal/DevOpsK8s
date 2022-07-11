@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1 
+kind: Ingress
+metadata:
+  name: ingress-demo-verde-azul
+  namespace: default
+spec:
+  rules:
+  #- host: azul.example.com
+  # Puedo cambiar rapidamente de version de test a producción modificando el name del servicio
+  - host: version-estable.color.io
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: /
+        backend:
+          service:
+            # Cambiar entre estable y test
+            name: web-azul
+            port:
+              number: 80
+  #- host: verde.example.com
+  - host: version-test.color.io
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: /
+        backend:
+          service:
+            # Cambiar entre estable y test
+            name: web-verde
+            port:
+              number: 80
