@@ -21,7 +21,7 @@
 
 ## Prueba de instalacion
 
-    kubectl version --client
+    kubectl version --short
 
 ## Shell autompletion
 

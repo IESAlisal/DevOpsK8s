@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-ies-alisal
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wordpress-alisal
+  template:
+    metadata:
+      labels:
+        app: wordpress-alisal
+        env: dev
+    spec:
+      containers:
+      - name: wordpress-alisal
+        image: wordpress
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

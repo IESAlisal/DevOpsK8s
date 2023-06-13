@@ -38,12 +38,7 @@
 
 ## Revisar configuración con el dashboard y CLI
 
-    kubectl get deployments
-    kubectl get replicasets
-    kubectl get pods
-
-## Ver detalles del pod
-
+    kubectl get dec
     kubectl describe pod web-dash-74d8bd488f-dwbzz
 
 ## Mostrar mas datos del pod con dos columnas nuevas

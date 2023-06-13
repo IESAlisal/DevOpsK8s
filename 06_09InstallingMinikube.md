@@ -8,7 +8,10 @@ Información obtenida del curso de edX
 
     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
+o
 
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+    sudo dpkg -i minikube_latest_amd64.deb
 ## Para verificar si está habilitada la virtualización por hardware
 
     $grep -E --color 'vmx|svm' /proc/cpuinfo
@@ -34,7 +37,8 @@ Ese docker es el NODO/HOST por defecto del cluster Kubernetes
 ## Nuevo profile minibox con 3 nodos
 
     minikube start -n 3 -p minibox     (ARRANCAR TAMBIEN EL CLUSTER DE NUEVO?)
-    
+    minikube start -n 3 -p minibox --kubernetes-version=latest    (CON VERSION DE KUBERNETES)
+
     minikube status -p minibox
     #(Puedes tener los dos cluster con dos perfiles diferentes arrancados)
 

@@ -13,6 +13,7 @@ Verificar la lista de addons y ver el estado del ingress (deshabilitado)
 
 ## Habilitar ingress
 
+    minikube addons list -p minibox
     minikube addons enable ingress -p minibox
     minikube addons list -p minibox
 
